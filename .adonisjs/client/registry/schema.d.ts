@@ -85,6 +85,32 @@ export interface Registry {
       rawResponse: ExtractRawResponse<unknown>
     }
   }
+  'configuration': {
+    methods: ["GET","HEAD"]
+    pattern: '/configuration'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: unknown
+      errorResponse: unknown
+      rawResponse: ExtractRawResponse<unknown>
+    }
+  }
+  'quiz': {
+    methods: ["GET","HEAD"]
+    pattern: '/quiz'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: unknown
+      errorResponse: unknown
+      rawResponse: ExtractRawResponse<unknown>
+    }
+  }
   'session.destroy': {
     methods: ["POST"]
     pattern: '/logout'

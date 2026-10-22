@@ -42,6 +42,18 @@ const routes = {
     tokens: [[0,"dashboard"]],
     types: placeholder as Registry['dashboard']['types'],
   },
+  'configuration': {
+    methods: ["GET","HEAD"],
+    pattern: '/configuration',
+    tokens: [[0,"configuration"]],
+    types: placeholder as Registry['configuration']['types'],
+  },
+  'quiz': {
+    methods: ["GET","HEAD"],
+    pattern: '/quiz',
+    tokens: [[0,"quiz"]],
+    types: placeholder as Registry['quiz']['types'],
+  },
   'session.destroy': {
     methods: ["POST"],
     pattern: '/logout',

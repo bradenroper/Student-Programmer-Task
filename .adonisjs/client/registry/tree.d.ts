@@ -13,4 +13,6 @@ export interface ApiDefinition {
     destroy: typeof routes['session.destroy']
   }
   dashboard: typeof routes['dashboard']
+  configuration: typeof routes['configuration']
+  quiz: typeof routes['quiz']
 }
