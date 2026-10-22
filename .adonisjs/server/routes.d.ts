@@ -6,6 +6,7 @@ export type ScannedRoutes = {
   ALL: {
     'quiz': { paramsTuple?: []; params?: {} }
     'configuration': { paramsTuple?: []; params?: {} }
+    'questions.store': { paramsTuple?: []; params?: {} }
   }
   GET: {
     'quiz': { paramsTuple?: []; params?: {} }
@@ -14,6 +15,9 @@ export type ScannedRoutes = {
   HEAD: {
     'quiz': { paramsTuple?: []; params?: {} }
     'configuration': { paramsTuple?: []; params?: {} }
+  }
+  POST: {
+    'questions.store': { paramsTuple?: []; params?: {} }
   }
 }
 declare module '@adonisjs/core/types/http' {
