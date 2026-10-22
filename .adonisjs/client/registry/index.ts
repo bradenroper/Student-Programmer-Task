@@ -6,59 +6,17 @@ import type { ApiDefinition } from './tree.d.ts'
 const placeholder: any = {}
 
 const routes = {
-  'home': {
+  'quiz': {
     methods: ["GET","HEAD"],
     pattern: '/',
     tokens: [[0,"/"]],
-    types: placeholder as Registry['home']['types'],
-  },
-  'new_account.create': {
-    methods: ["GET","HEAD"],
-    pattern: '/signup',
-    tokens: [[0,"signup"]],
-    types: placeholder as Registry['new_account.create']['types'],
-  },
-  'new_account.store': {
-    methods: ["POST"],
-    pattern: '/signup',
-    tokens: [[0,"signup"]],
-    types: placeholder as Registry['new_account.store']['types'],
-  },
-  'session.create': {
-    methods: ["GET","HEAD"],
-    pattern: '/login',
-    tokens: [[0,"login"]],
-    types: placeholder as Registry['session.create']['types'],
-  },
-  'session.store': {
-    methods: ["POST"],
-    pattern: '/login',
-    tokens: [[0,"login"]],
-    types: placeholder as Registry['session.store']['types'],
-  },
-  'dashboard': {
-    methods: ["GET","HEAD"],
-    pattern: '/dashboard',
-    tokens: [[0,"dashboard"]],
-    types: placeholder as Registry['dashboard']['types'],
+    types: placeholder as Registry['quiz']['types'],
   },
   'configuration': {
     methods: ["GET","HEAD"],
     pattern: '/configuration',
     tokens: [[0,"configuration"]],
     types: placeholder as Registry['configuration']['types'],
-  },
-  'quiz': {
-    methods: ["GET","HEAD"],
-    pattern: '/quiz',
-    tokens: [[0,"quiz"]],
-    types: placeholder as Registry['quiz']['types'],
-  },
-  'session.destroy': {
-    methods: ["POST"],
-    pattern: '/logout',
-    tokens: [[0,"logout"]],
-    types: placeholder as Registry['session.destroy']['types'],
   },
 } as const satisfies Record<string, AdonisEndpoint>
 
