@@ -11,7 +11,8 @@ collaborator when you start working.
 The provided application has two tabs: Quiz and Configuration. The Quiz tab will show all of the questions
 from a local sqlite database while the configuration tab will allow you to edit and add new questions.
 Currently questions are simply text, but you will need to add multiple choice capabilities, with specific
-task items outlined further below. Design and structural decisions for these modifications are left up to you.
+task items outlined further below. You will also need to report results of the quiz after a user fills out 
+and submits all of their answers. Design and structural decisions for these modifications are left up to you.
 
 The use of AI tools is allowed, but should be disclosed via email when you are finished working (refer to your original task email for details). In the case of using AI, note that you should still be the one to make design decisions that you can explain and provide rationale for.
 
@@ -76,23 +77,23 @@ The goal is to add multiple choice functionality to the quiz. Questions currentl
 modified to include multiple choice options.
 
 - Update the database schema to support multiple choice
-  - `database/migrations/`
-  - [Migrations](https://lucid.adonisjs.com/docs/migrations), [Table builder](https://lucid.adonisjs.com/docs/table-builder), [Relationships](https://lucid.adonisjs.com/docs/relationships)
+  - Relevant Files: `database/migrations/`
+  - Relevant Docs: [Migrations](https://lucid.adonisjs.com/docs/migrations), [Table builder](https://lucid.adonisjs.com/docs/table-builder), [Relationships](https://lucid.adonisjs.com/docs/relationships)
 - Update the question model, validator, and transformer
-  - `app/models/question.ts`, `app/validators/question.ts`, `app/transformers/question_transformer.ts`
-  - [Models](https://lucid.adonisjs.com/docs/models), [Validation](https://docs.adonisjs.com/guides/basics/validation), [Transformers](https://docs.adonisjs.com/guides/frontend/transformers)
+  - Relevant Files: `app/models/question.ts`, `app/validators/question.ts`, `app/transformers/question_transformer.ts`
+  - Relevant Docs: [Models](https://lucid.adonisjs.com/docs/models), [Validation](https://docs.adonisjs.com/guides/basics/validation), [Transformers](https://docs.adonisjs.com/guides/frontend/transformers)
 - Update the questions controller and routes
-  - `app/controllers/questions_controller.ts`, `start/routes.ts`
-  - [Controllers](https://docs.adonisjs.com/guides/basics/controllers), [Routing](https://docs.adonisjs.com/guides/basics/routing), [CRUD operations](https://lucid.adonisjs.com/docs/crud-operations)
+  - Relevant Files: `app/controllers/questions_controller.ts`, `start/routes.ts`
+  - Relevant Docs: [Controllers](https://docs.adonisjs.com/guides/basics/controllers), [Routing](https://docs.adonisjs.com/guides/basics/routing), [CRUD operations](https://lucid.adonisjs.com/docs/crud-operations)
 - Update the question form
-  - `inertia/components/question_form.tsx`
-  - [Inertia forms](https://inertiajs.com/docs/v3/the-basics/forms), [AdonisJS + Inertia](https://docs.adonisjs.com/guides/frontend/inertia)
+  - Relevant Files: `inertia/components/question_form.tsx`
+  - Relevant Docs: [Inertia forms](https://inertiajs.com/docs/v3/the-basics/forms), [AdonisJS + Inertia](https://docs.adonisjs.com/guides/frontend/inertia)
 - Update the configuration question component
-  - `inertia/components/question_config.tsx`
-  - [React](https://react.dev/learn), [Tailwind CSS](https://tailwindcss.com/docs)
+  - Relevant Files: `inertia/components/question_config.tsx`
+  - Relevant Docs: [React](https://react.dev/learn), [Tailwind CSS](https://tailwindcss.com/docs)
 - Update the quiz question component
-  - `inertia/components/question_view.tsx`
-  - [React state](https://react.dev/learn/state-a-components-memory), [Tailwind CSS](https://tailwindcss.com/docs)
+  - Relevant Files: `inertia/components/question_view.tsx`
+  - Relevant Docs: [React state](https://react.dev/learn/state-a-components-memory), [Tailwind CSS](https://tailwindcss.com/docs)
 
 ## Scoring
 
