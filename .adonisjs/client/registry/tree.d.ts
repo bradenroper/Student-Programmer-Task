@@ -6,5 +6,6 @@ export interface ApiDefinition {
   configuration: typeof routes['configuration']
   questions: {
     store: typeof routes['questions.store']
+    destroy: typeof routes['questions.destroy']
   }
 }

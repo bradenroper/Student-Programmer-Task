@@ -24,6 +24,12 @@ const routes = {
     tokens: [[0,"questions"]],
     types: placeholder as Registry['questions.store']['types'],
   },
+  'questions.destroy': {
+    methods: ["DELETE"],
+    pattern: '/questions/:id',
+    tokens: [[0,"questions"],[1,"id"]],
+    types: placeholder as Registry['questions.destroy']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

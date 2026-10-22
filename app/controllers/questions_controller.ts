@@ -10,12 +10,20 @@ export default class QuestionsController {
   }
 
   async create({ inertia }: HttpContext) {
-    return inertia.render('configuration', {})
+    const questions = await Question.query().orderBy('id')
+    return inertia.render('configuration', { questions: QuestionTransformer.transform(questions) })
   }
 
   async store({ request, response }: HttpContext) {
     const { text } = await request.validateUsing(createQuestionValidator)
     await Question.create({ text })
+
+    response.redirect().back()
+  }
+
+  async destroy({ params, response }: HttpContext) {
+    const question = await Question.findOrFail(params.id)
+    await question.delete()
 
     response.redirect().back()
   }

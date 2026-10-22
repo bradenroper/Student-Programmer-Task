@@ -46,4 +46,17 @@ export interface Registry {
       rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/questions_controller').default['store']>>> | { status: 422; response: { errors: SimpleError[] } }
     }
   }
+  'questions.destroy': {
+    methods: ["DELETE"]
+    pattern: '/questions/:id'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/questions_controller').default['destroy']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/questions_controller').default['destroy']>>>
+      rawResponse: ExtractRawResponse<Awaited<ReturnType<import('#controllers/questions_controller').default['destroy']>>>
+    }
+  }
 }
