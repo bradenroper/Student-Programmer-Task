@@ -6,47 +6,29 @@ import type { ApiDefinition } from './tree.d.ts'
 const placeholder: any = {}
 
 const routes = {
-  'home': {
+  'quiz': {
     methods: ["GET","HEAD"],
     pattern: '/',
     tokens: [[0,"/"]],
-    types: placeholder as Registry['home']['types'],
+    types: placeholder as Registry['quiz']['types'],
   },
-  'new_account.create': {
+  'configuration': {
     methods: ["GET","HEAD"],
-    pattern: '/signup',
-    tokens: [[0,"signup"]],
-    types: placeholder as Registry['new_account.create']['types'],
+    pattern: '/configuration',
+    tokens: [[0,"configuration"]],
+    types: placeholder as Registry['configuration']['types'],
   },
-  'new_account.store': {
+  'questions.store': {
     methods: ["POST"],
-    pattern: '/signup',
-    tokens: [[0,"signup"]],
-    types: placeholder as Registry['new_account.store']['types'],
+    pattern: '/questions',
+    tokens: [[0,"questions"]],
+    types: placeholder as Registry['questions.store']['types'],
   },
-  'session.create': {
-    methods: ["GET","HEAD"],
-    pattern: '/login',
-    tokens: [[0,"login"]],
-    types: placeholder as Registry['session.create']['types'],
-  },
-  'session.store': {
-    methods: ["POST"],
-    pattern: '/login',
-    tokens: [[0,"login"]],
-    types: placeholder as Registry['session.store']['types'],
-  },
-  'dashboard': {
-    methods: ["GET","HEAD"],
-    pattern: '/dashboard',
-    tokens: [[0,"dashboard"]],
-    types: placeholder as Registry['dashboard']['types'],
-  },
-  'session.destroy': {
-    methods: ["POST"],
-    pattern: '/logout',
-    tokens: [[0,"logout"]],
-    types: placeholder as Registry['session.destroy']['types'],
+  'questions.destroy': {
+    methods: ["DELETE"],
+    pattern: '/questions/:id',
+    tokens: [[0,"questions"],[1,"id"]],
+    types: placeholder as Registry['questions.destroy']['types'],
   },
 } as const satisfies Record<string, AdonisEndpoint>
 

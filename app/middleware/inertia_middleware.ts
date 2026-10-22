@@ -1,6 +1,5 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import type { NextFn } from '@adonisjs/core/types/http'
-import UserTransformer from '#transformers/user_transformer'
 import BaseInertiaMiddleware from '@adonisjs/inertia/inertia_middleware'
 
 export default class InertiaMiddleware extends BaseInertiaMiddleware {
@@ -8,12 +7,12 @@ export default class InertiaMiddleware extends BaseInertiaMiddleware {
     /**
      * The share method is called everytime an Inertia page is rendered. In
      * certain cases, a page may get rendered before the session middleware
-     * or the auth middleware are executed. For example: During a 404 request.
+     * is executed. For example: During a 404 request.
      *
      * In that case, we must always assume that HttpContext is not fully hydrated
      * with all the properties
      */
-    const { auth, request } = ctx as Partial<HttpContext>
+    const { request } = ctx as Partial<HttpContext>
 
     const theme: 'light' | 'dark' =
       request?.plainCookie('app_theme', {
@@ -27,7 +26,6 @@ export default class InertiaMiddleware extends BaseInertiaMiddleware {
      */
     return {
       errors: ctx.inertia.always(this.getValidationErrors(ctx)),
-      user: ctx.inertia.always(auth?.user ? UserTransformer.transform(auth.user) : undefined),
       preferences: ctx.inertia.always({ theme }),
     }
   }
