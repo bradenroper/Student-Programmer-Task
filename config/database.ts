@@ -39,7 +39,7 @@ const dbConfig = defineConfig({
       },
 
       schemaGeneration: {
-        enabled: false,
+        enabled: true,
         rulesPaths: ['./database/schema_rules.js'],
       },
     },
